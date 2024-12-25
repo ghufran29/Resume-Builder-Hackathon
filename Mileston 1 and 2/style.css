@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Calibri, sans-serif;
+}
+
+body {
+  background: linear-gradient(
+    45deg,
+    #a5072e,
+    #471b39,
+    #27279e,
+    #4a148c,
+    #0d47a1
+  );
+  background-size: 400% 400%;
+  animation: gradientBackground 12s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+@keyframes gradientBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.container {
+  width: 60%;
+  background: #fff;
+  margin: 50px auto;
+  padding: 60px 40px;
+  box-shadow: 0 35px 55px rgba(0, 0, 0, 0.25);
+}
+
+.contactInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid;
+  padding-bottom: 8px;
+  margin-bottom: 25px;
+}
+
+.contactInfo img {
+  width: 130px;
+  height: 130px;
+  border-radius: 3%;
+  object-fit: cover;
+}
+
+.contactInfo h1 {
+  font-weight: bolder;
+  font-size: 45px;
+  text-transform: uppercase;
+}
+
+.contactInfo h3 {
+  font-weight: 800;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin: 5px 0;
+}
+
+.contactInfo p {
+  font-size: 18px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin: 4px 0;
+}
+
+.profile {
+  margin: 25px 0;
+}
+
+.profile p {
+  padding-top: 6px;
+  border-top: 1px solid;
+  font-size: 18px;
+}
+
+.education {
+  margin-bottom: 25px;
+}
+
+.inline {
+  display: flex;
+  justify-content: space-between;
+}
+
+.subdiv h5 {
+  font-weight: 400;
+  font-size: 17px;
+}
+.subdiv {
+  padding-top: 6px;
+  border-top: 1px solid;
+  font-size: 17px;
+}
+ul {
+  padding-left: 18px;
+  margin-top: 6px;
+}
+
+.experience {
+  margin-bottom: 25px;
+}
+
+.certification {
+  margin-bottom: 25px;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.stoggle {
+  display: block;
+}
+
+.toggle h4:last-child {
+  display: none;
+  cursor: pointer;
+}
+.toggle h4:first-child,
+.toggle h4:nth-child(2) {
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    padding: 20px;
+    box-shadow: none;
+  }
+
+  .contactInfo {
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+    border-bottom: none;
+  }
+
+  .contactInfo h1 {
+    font-size: 33px;
+    margin-top: 10px;
+  }
+
+  .contactInfo h3 {
+    font-size: 18px;
+  }
+
+  .contactInfo p {
+    font-size: 16px;
+  }
+
+  .contactInfo img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+  }
+
+  .profile,
+  .education,
+  .experience,
+  .certification,
+  .skills {
+    margin: 20px 0;
+  }
+
+  .inline {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .inline h4,
+  .inline h5 {
+    text-align: left;
+  }
+
+  .subdiv {
+    text-align: left;
+  }
+
+  ul {
+    margin-top: 10px;
+    padding-left: 10px;
+  }
+}

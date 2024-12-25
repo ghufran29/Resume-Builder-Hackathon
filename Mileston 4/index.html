@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Resume Builder</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container" id="formContainer">
+      <h1>Resume Builder</h1>
+
+      <!-- Resume Builder Form -->
+      <form id="resumeForm">
+        <label for="name">Full Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Enter your full name"
+          required
+        />
+
+        <label for="title">Job Title</label>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          placeholder="e.g., Frontend Developer"
+          required
+        />
+
+        <label for="contact">Contact Information</label>
+        <div class="inline">
+          <input
+            type="text"
+            id="address"
+            name="address"
+            placeholder="Address"
+            required
+          />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email"
+            required
+          />
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="Phone"
+            required
+          />
+        </div>
+
+        <label for="profile">Summary</label>
+        <textarea
+          id="profile"
+          name="profile"
+          rows="5"
+          placeholder="Write your professional summary here..."
+          required
+        ></textarea>
+
+        <label for="education">Education</label>
+        <div id="educationSection">
+          <div class="educationEntry">
+            <div class="inline">
+              <input type="text" name="degree" placeholder="Degree" required />
+              <input
+                type="text"
+                name="institution"
+                placeholder="Institution"
+                required
+              />
+            </div>
+            <input
+              type="text"
+              name="educationDates"
+              id="eduDates"
+              placeholder="Dates (e.g., 2012 - 2016)"
+              required
+            />
+          </div>
+        </div>
+        <span class="add-more" onclick="addEducation()"
+          >+ Add More Education</span
+        >
+
+        <label for="experience">Work Experience</label>
+        <div id="experienceSection">
+          <div class="experienceEntry">
+            <div class="inline">
+              <input
+                type="text"
+                name="jobTitle"
+                placeholder="Job Title"
+                required
+              />
+              <input
+                type="text"
+                name="company"
+                placeholder="Company"
+                required
+              />
+            </div>
+            <input
+              type="text"
+              name="experienceDates"
+              placeholder="Dates (e.g., April 2018 - July 2020)"
+              required
+            />
+            <textarea
+              name="experienceDetails"
+              rows="3"
+              placeholder="Details about the role..."
+            ></textarea>
+          </div>
+        </div>
+        <span class="add-more" onclick="addExperience()"
+          >+ Add More Experience</span
+        >
+
+        <label for="skills">Skills</label>
+        <textarea
+          id="skills"
+          name="skills"
+          rows="4"
+          placeholder="List your skills by comma-separated..."
+          required
+        ></textarea>
+
+        <button type="button" class="genbtn" onclick="generateResume()">
+          Generate Resume
+        </button>
+      </form>
+      <!-- footer -->
+      <footer class="footer">
+        <p>
+          ©️ 2024 Resume Builder - Designed and Developed by
+          <a href="https://github.com/ghufran29" target="_blank">M. Ghufran</a>
+        </p>
+      </footer>
+    </div>
+
+    <div class="btndiv">
+      <button
+        id="backToEditT"
+        class="genbtn"
+        onclick="backToEdit()"
+        style="display: none"
+      >
+        Back to Edit
+      </button>
+      <button
+        id="printTop"
+        class="genbtn"
+        onclick="printResume()"
+        style="display: none"
+      >
+        Download/Print
+      </button>
+    </div>
+
+    <!-- Generated Resume -->
+    <div class="resume" id="resume">
+      <!-- Contact -->
+      <div class="contactInfo">
+        <div>
+          <h1 class="title" id="resume-name"></h1>
+          <h3 class="subtitle" id="resume-title"></h3>
+          <p>
+            <span id="resume-address"></span> |
+            <span id="resume-email"></span> | <span id="resume-phone"></span>
+          </p>
+        </div>
+      </div>
+      <!-- Profile -->
+      <div class="profile">
+        <h4 class="title">Summary</h4>
+        <p id="resume-profile"></p>
+      </div>
+      <!-- Education -->
+      <div class="education">
+        <h4 class="title">Education</h4>
+        <div class="subdiv" id="resume-education"></div>
+      </div>
+      <!-- Experience -->
+      <div class="experience">
+        <h4 class="title">Work Experience</h4>
+        <div class="subdiv" id="resume-experience"></div>
+      </div>
+      <!-- Skills -->
+      <div class="skills">
+        <h4 class="title">Skills</h4>
+        <div class="subdiv" id="resume-skills"></div>
+      </div>
+    </div>
+
+    <div class="btndiv">
+      <button
+        id="backToEditB"
+        class="genbtn"
+        onclick="backToEdit()"
+        style="display: none"
+      >
+        Back to Edit
+      </button>
+      <button
+        id="printBottom"
+        class="genbtn"
+        onclick="printResume()"
+        style="display: none"
+      >
+        Download/Print
+      </button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

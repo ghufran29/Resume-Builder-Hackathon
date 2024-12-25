@@ -1,0 +1,468 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Calibri, sans-serif;
+}
+
+body {
+  background: linear-gradient(
+    45deg,
+    #a5072e,
+    #471b39,
+    #27279e,
+    #4a148c,
+    #0d47a1
+  );
+  background-size: 400% 400%;
+  animation: gradientBackground 12s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 30px auto;
+  flex-direction: column;
+}
+
+@keyframes gradientBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Resume Builder Form */
+.container {
+  width: 60%;
+  background: #fff;
+  padding: 60px 40px;
+  box-shadow: 0 35px 55px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  font-weight: bolder;
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+label {
+  font-weight: bold;
+  font-size: larger;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.inline {
+  display: flex;
+  gap: 15px;
+}
+
+.inline input {
+  flex: 1;
+}
+
+.eduDates {
+  width: 10%;
+}
+
+.add-more {
+  color: #007bff;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.remove {
+  color: #ff0000;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.genbtn {
+  --bg: #000;
+  --hover-bg: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+  --hover-text: #fff;
+  color: #fff;
+  cursor: pointer;
+  border: 1px solid var(--bg);
+  border-radius: 2px;
+  padding: 0.8em 0;
+  margin: 10px auto;
+  width: 160px;
+  font-size: 17px;
+  background: var(--bg);
+  transition: 0.2s;
+}
+
+.genbtn:hover {
+  color: var(--hover-text);
+  transform: translate(-0.25rem, -0.25rem);
+  background: var(--hover-bg);
+  box-shadow: 0.25rem 0.25rem var(--bg);
+}
+
+.genbtn:active {
+  transform: translate(0);
+  box-shadow: none;
+}
+
+.btndiv {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* Generated Resume */
+.resume {
+  display: none;
+  padding: 60px 40px;
+  background: #fff;
+  box-shadow: 0 35px 55px rgba(0, 0, 0, 0.25);
+  width: 60%;
+}
+
+.contactInfo {
+  text-align: center;
+  border-bottom: 3px solid;
+  padding-bottom: 8px;
+  margin-bottom: 25px;
+}
+
+.contactInfo h1 {
+  font-weight: bolder;
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+.contactInfo h3 {
+  font-weight: 800;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin: 5px 0;
+}
+
+.contactInfo p {
+  font-size: 18px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin: 4px 0;
+}
+
+.profile {
+  margin: 25px 0;
+}
+
+.profile p {
+  padding-top: 6px;
+  border-top: 1px solid;
+  font-size: 18px;
+}
+
+.education,
+.experience,
+.certification {
+  margin-bottom: 25px;
+}
+
+.inline {
+  display: flex;
+  justify-content: space-between;
+}
+
+.subdiv {
+  padding-top: 6px;
+  border-top: 1px solid;
+  font-size: 17px;
+}
+
+.subdiv h5 {
+  font-weight: 400;
+  font-size: 17px;
+}
+
+.subdiv h4 {
+  font-size: 18px;
+}
+
+.subdiv div {
+  margin-top: 10px;
+}
+
+ul {
+  padding-left: 18px;
+  margin-top: 6px;
+}
+
+.error-highlight {
+  border: 2px solid red;
+  background-color: #ffe5e5;
+}
+
+.skills-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.skills-columns ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+}
+
+/* Footer Styling */
+.footer {
+  margin-top: 25px;
+  text-align: center;
+  padding: 20px 10px;
+  font-family: "Arial", sans-serif;
+  font-size: 16px;
+  color: #27279e;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+  border-top: 2px solid #5b42f3;
+}
+
+.footer a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #711be2e1;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #1722bb;
+}
+
+.footer p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+#sharePopup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  #resume,
+  #resume * {
+    visibility: visible;
+  }
+
+  #resume h1 {
+    font-size: 38px;
+  }
+
+  #resume .education .inline,
+  #resume .experience .inline {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+  }
+
+  #resume .education .inline h4,
+  #resume .experience .inline h4 {
+    flex: 1;
+  }
+
+  #resume .education .inline h5,
+  #resume .experience .inline h5 {
+    white-space: nowrap;
+    text-align: right;
+  }
+
+  #resume .skills-columns {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    gap: 20px !important;
+  }
+
+  #resume .skills-columns ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+  }
+
+  #resume {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 210mm;
+    height: 297mm;
+    margin: 0 auto;
+    padding: 10mm;
+    box-shadow: none;
+    background: white;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 768px) {
+  /* General Body Styling for Mobile */
+  body {
+    margin: 10px auto;
+    flex-direction: column;
+  }
+
+  /* Container for Form and Resume */
+  .container,
+  .resume {
+    width: 92%;
+    padding: 20px 15px;
+  }
+
+  /* Form Styling */
+  h1 {
+    font-size: 26px;
+  }
+
+  form {
+    gap: 10px;
+  }
+
+  label {
+    font-size: 17px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea,
+  select {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .inline {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .add-more,
+  .remove {
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .genbtn {
+    width: 106px;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .btndiv {
+    gap: 8px;
+  }
+
+  /* Generated Resume Styling */
+  .resume {
+    padding: 20px;
+  }
+
+  .contactInfo {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .contactInfo h1 {
+    font-size: 28px;
+  }
+
+  .contactInfo h3 {
+    font-size: 18px;
+  }
+
+  .contactInfo p {
+    font-size: 14px;
+  }
+
+  .title {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .profile p {
+    font-size: 14px;
+    padding-top: 10px;
+  }
+
+  .subdiv {
+    font-size: 14px;
+    padding-top: 10px;
+  }
+
+  .subdiv h4 {
+    font-size: 16px;
+  }
+
+  .subdiv h5 {
+    font-size: 14px;
+  }
+
+  ul {
+    padding-left: 15px;
+    font-size: 14px;
+  }
+
+  .skills-columns {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .skills-columns ul {
+    padding-left: 10px;
+  }
+
+  #printTop,
+  #printBottom {
+    width: 160px;
+    font-size: 14px;
+  }
+}
